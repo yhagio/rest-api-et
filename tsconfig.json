@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
-    "importHelpers": true,
     "module": "commonjs",
     "moduleResolution": "node",
-    "target": "ES2017",
-    "sourceMap": true,
     "noUnusedParameters": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "pretty": false,
+    "sourceMap": true,
+    "target": "ES2017",
+    "outDir": "./dist",
+    "baseUrl": "./app"
   },
   "include": [
     "app/**/*.ts",

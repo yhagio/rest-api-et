@@ -4,17 +4,13 @@
   "description": "REST API with Express / Typescript",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && nodemon",
+    "start": "tsc && nodemon dist --watch",
     "unit": "mocha test/",
     "test": "istanbul cover _mocha --test/",
-    "lint": "tslint 'app/**/*.ts'"
+    "lint": "tslint 'app/**/*.ts'",
+    "fixlint": "tslint 'app/**/*.ts' --fix"
   },
-  "keywords": [
-    "Node.js",
-    "Typescript",
-    "Express.js",
-    "Postgres"
-  ],
+  "keywords": ["Node.js", "Typescript", "Express.js", "Postgres"],
   "author": "Yuichi Hagio",
   "license": "ISC",
   "devDependencies": {
@@ -29,10 +25,12 @@
     "@types/jsonwebtoken": "^7.2.6",
     "@types/knex": "^0.14.12",
     "@types/mailgun-js": "^0.16.0",
+    "@types/node": "^10.0.4",
     "@types/stripe": "^5.0.10",
     "istanbul": "^1.1.0-alpha.1",
     "mocha": "^5.1.1",
     "nodemon": "^1.17.3",
+    "prettier": "1.12.1",
     "sinon": "^4.5.0",
     "tslint": "^5.9.1",
     "typescript": "^2.8.3"
