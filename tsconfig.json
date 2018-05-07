@@ -6,15 +6,8 @@
     "noUnusedLocals": true,
     "pretty": false,
     "sourceMap": true,
-    "target": "ES2017",
-    "outDir": "./dist",
-    "baseUrl": "./app"
+    "target": "ES2017"
   },
-  "include": [
-    "app/**/*.ts",
-    "test/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["app/**/*.ts", "test/**/*.ts"],
+  "exclude": ["node_modules"]
 }

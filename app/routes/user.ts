@@ -10,7 +10,8 @@ class UserRouter {
   }
 
   public routes() {
-    this.router.get('/:id', UserController.findOne);
+    this.router.get('/', UserController.all);
+    this.router.get('/:userId', UserController.findOne);
   }
 }
 
