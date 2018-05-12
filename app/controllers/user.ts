@@ -2,10 +2,12 @@ import * as express from 'express';
 import DB from '../database';
 import User from '../models/user';
 
-export async function all(
-  req: express.Request,
-  res: express.Response
-): Promise<void> {
+export default {
+  all,
+  findOne
+};
+
+async function all(req: express.Request, res: express.Response): Promise<void> {
   const trx = await DB.startTransaction();
   try {
     const users = await User.all(trx, req.query.limit);
@@ -17,7 +19,7 @@ export async function all(
   }
 }
 
-export async function findOne(
+async function findOne(
   req: express.Request,
   res: express.Response
 ): Promise<void> {

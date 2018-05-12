@@ -1,6 +1,7 @@
 export default {
   findOne,
-  all
+  all,
+  create
 };
 
 function findOne(trx, userId: string) {
@@ -16,4 +17,11 @@ function all(trx, limit = 100) {
     .select('*')
     .from('users')
     .limit(limit);
+}
+
+function create(trx, user) {
+  return trx
+    .insert(user)
+    .into('users')
+    .returning('user_id');
 }

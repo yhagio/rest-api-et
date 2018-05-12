@@ -1,4 +1,5 @@
 import * as express from 'express';
+import AuthRouter from './auth';
 import UserRouter from './user';
 
 export default function Routes(app: express.Application) {
@@ -8,5 +9,6 @@ export default function Routes(app: express.Application) {
   app.use('/ping', (_, res) => {
     res.status(200).json({ ok: 'Pong' });
   });
+  app.use('/api/auth', AuthRouter);
   app.use('/api/users', UserRouter);
 }

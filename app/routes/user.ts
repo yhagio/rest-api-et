@@ -1,5 +1,5 @@
 import * as express from 'express';
-import * as UserController from '../controllers/user';
+import UserController from '../controllers/user';
 
 class UserRouter {
   public router: express.Router;
