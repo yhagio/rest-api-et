@@ -1,0 +1,21 @@
+version: '3'
+services:
+  postgres:
+    image: 'postgres:10.5'
+    volumes:
+    - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  api:
+    build:
+      dockerfile: Dockerfile.dev # Use dev dockerfile in server folder
+      context: ./
+    volumes:
+      - /app/node_modules # Copy node_modules folder as is
+      - ./:/app     # Copy rest of / folder to /app
+    # environment:
+    #   - PGHOST=postgres
+    #   - PGDATABASE=rest_api_dev
+    #   - PGUSER=dev_user
+    #   - PGPASSWORD=password
+    #   - PGPORT=5432
+    ports:
+      - '3000:3000'

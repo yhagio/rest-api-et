@@ -3,7 +3,7 @@
     "postgres": {
       "client": "postgres",
       "connection": {
-        "host": "localhost",
+        "host": "postgres",
         "port": "5432",
         "database": "rest_api_dev",
         "user": "dev_user",

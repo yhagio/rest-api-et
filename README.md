@@ -1,6 +1,21 @@
 # Express, Typescript, Knex, Postgres boilerplate
 
-### Set up
+### Set up (Docker)
+```bash
+# Build image and run the app (development)
+docker-compose up
+
+# Show running containers
+docker ps
+
+# Insert an user manually (if you want to)
+docker exec -it <postgres container id> psql -h postgres -U postgres
+> \c rest_api_dev
+> INSERT INTO users (first_name, last_name, username, email, password) VALUES ('Alice', 'Smith', 'asmith', 'asmith@test.com', 'password');
+```
+
+
+### Set up (Non Docker)
 
 1. Postgres setup (Create database called `rest_api_dev` with
 user: `dev_user` and password: `password`
@@ -37,7 +52,7 @@ Add an user to DB
 INSERT INTO users (first_name, last_name, username, email, password) VALUES
  ('Alice', 'Smith', 'asmith', 'asmith@test.com', 'password');
 ```
-Try to get the user via REST API endpoint (`GET /api/users/0`)
+Try to get the user via REST API endpoint (`GET /api/users/:uuid`)
 ```bash
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" http://localhost:3000/api/users/0
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" http://localhost:3000/api/users/<uuid>
 ```
