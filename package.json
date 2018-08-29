@@ -4,6 +4,7 @@
   "description": "REST API with Express / Typescript",
   "main": "index.js",
   "scripts": {
+    "start": "export NODE_ENV=production && tsc && node app/index",
     "dev": "export NODE_ENV=development && tsc && nodemon app --watch",
     "unit": "mocha test/",
     "test": "istanbul cover _mocha --test/",

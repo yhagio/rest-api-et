@@ -12,6 +12,10 @@ docker ps
 docker exec -it <postgres container id> psql -h postgres -U postgres
 > \c rest_api_dev
 > INSERT INTO users (first_name, last_name, username, email, password) VALUES ('Alice', 'Smith', 'asmith', 'asmith@test.com', 'password');
+
+# run lint 
+docker ps # Find the container id like b724d5365915
+docker exec b724d5365915 npm run lint
 ```
 
 
@@ -55,4 +59,15 @@ INSERT INTO users (first_name, last_name, username, email, password) VALUES
 Try to get the user via REST API endpoint (`GET /api/users/:uuid`)
 ```bash
 curl -i -H "Accept: application/json" -H "Content-Type: application/json" http://localhost:3000/api/users/<uuid>
+```
+
+### Production
+
+Setup environmental variables for Postgres in `/app/config/config.ts`
+```
+PG_HOST
+PG_PORT
+PG_DATABASE
+PG_USER
+PG_PASSWORD
 ```
