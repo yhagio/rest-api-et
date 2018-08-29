@@ -7,4 +7,4 @@ before_install:
 
 # Run tests
 script:
-  - docker run yhagio/rest-api-et npm run test
+  - docker run yhagio/rest-api-et npm run lint
