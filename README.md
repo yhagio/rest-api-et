@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/yhagio/rest-api-et.svg?branch=master)](https://travis-ci.org/yhagio/rest-api-et)
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/yhagio/rest-api-et/blob/master/LICENSE)
 
 # Express, Typescript, Knex, Postgres boilerplate
 
